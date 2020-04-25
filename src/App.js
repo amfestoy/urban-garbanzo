@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 const App = () => {
+  const [inputField, setInputField] = useState();
+  const onInput = (ev) => {
+    const value = ev.target.value;
+    setInputField(value);
+  };
+
+  const onClickSearch = () => {
+    // use inputField value to search
+  };
+
   return (
     <div className="App">
       <h1>Bring back swag to housing</h1>
+      <input value={inputField} onChange={onInput} />
+      <button onClick={onClickSearch}>Search for address</button>
     </div>
   );
 };
