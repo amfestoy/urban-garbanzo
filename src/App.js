@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Bring back swag to housing</h1>
+      <h1>Bringing Swag Back To Housing</h1>
       <input value={inputField} onChange={onInput} />
       <button onClick={onClickSearch}>Search for address</button>
     </div>
