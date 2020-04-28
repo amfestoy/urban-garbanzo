@@ -27,6 +27,14 @@ const App = () => {
     });
   };
 
+  const onClickEnter = (event) => {
+    console.log(event);
+    if (event.keyCode === 13) {
+      onClickSearch();
+      console.log(inputField);
+    }
+  };
+
   return (
     <div className="App">
       <div className="App-white-container">
@@ -38,6 +46,7 @@ const App = () => {
             <input
               value={inputField}
               onChange={onInput}
+              onKeyDown={onClickEnter}
               className="nes-input"
             />
             <button onClick={onClickSearch} className="nes-btn is-success">
