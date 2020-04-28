@@ -17,11 +17,11 @@ const App = () => {
     request.get(url, (err, res) => {
       if (err) {
         console.log(err);
+        setGif(undefined);
         return;
       }
       if (res) {
         const index = Math.floor(Math.random() * res.body.data.length);
-        console.log(res.body.data);
         setGif(res.body.data[index].images.downsized_large.url);
       }
     });
