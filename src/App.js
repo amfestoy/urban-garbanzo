@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import request from "superagent";
+import "nes.css/css/nes.min.css";
 
 const App = () => {
   const [inputField, setInputField] = useState();
@@ -28,10 +29,24 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Bringing Swag Back To Housing</h1>
-      <input value={inputField} onChange={onInput} />
-      <button onClick={onClickSearch}>Search for address</button>
-      {gif ? <img src={gif} /> : <div> Can't find gif</div>}
+      <div className="App-white-container">
+        <div className="nes-container with-title">
+          <h1 className="nes-text is-primary" className="title">
+            Bringing Swag Back To Housing
+          </h1>
+          <div>
+            <input
+              value={inputField}
+              onChange={onInput}
+              className="nes-input"
+            />
+            <button onClick={onClickSearch} className="nes-btn is-success">
+              Search for gif
+            </button>
+          </div>
+          {gif ? <img src={gif} /> : <div> Can't find gif</div>}
+        </div>
+      </div>
     </div>
   );
 };

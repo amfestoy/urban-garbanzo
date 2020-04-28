@@ -1,3 +1,18 @@
 .App {
-  text-align: center;
+  font-family: retro;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  background: purple;
+  height: 100vh;
+}
+
+.App-white-container {
+  height: fit-content;
+  background: white;
+}
+
+@font-face {
+  font-family: retro;
+  src: url("./kongtext/kongtext.ttf");
 }
