@@ -4,7 +4,7 @@ import request from "superagent";
 import "nes.css/css/nes.min.css";
 
 const App = () => {
-  const [inputField, setInputField] = useState();
+  const [inputField, setInputField] = useState("");
   const initialGif = "https://media.giphy.com/media/1qZN5tkAyiykg/giphy.gif";
   const [gif, setGif] = useState(initialGif);
   const onInput = (ev) => {
@@ -15,23 +15,19 @@ const App = () => {
   const onClickSearch = () => {
     const url = `http://api.giphy.com/v1/gifs/search?q=${inputField}&api_key=dc6zaTOxFJmzC`;
     request.get(url, (err, res) => {
-      if (err) {
+      if (err || !res.body.data.length || !res.body.data.length > 0) {
         console.log(err);
         setGif(undefined);
         return;
       }
-      if (res) {
-        const index = Math.floor(Math.random() * res.body.data.length);
-        setGif(res.body.data[index].images.downsized_large.url);
-      }
+      const index = Math.floor(Math.random() * res.body.data.length);
+      setGif(res.body.data[index].images.downsized_large.url);
     });
   };
 
   const onClickEnter = (event) => {
-    console.log(event);
     if (event.keyCode === 13) {
       onClickSearch();
-      console.log(inputField);
     }
   };
 
