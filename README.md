@@ -1,6 +1,6 @@
 # GIF search tool
 
-Small project to search for a gif using reach and hooks.
+Small project to search for a gif using React with Hooks.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
